@@ -1,0 +1,1 @@
+Result of the pipeline on each image from the test_images folder.

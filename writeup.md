@@ -107,3 +107,12 @@ From here we can derive several potential improvements:
     - A simple solution for dealing with the problem at hand is to simply filter the values of the polynomes over time, after all roads are built according to specific standards and the lane curvature is supposed to be change linearly and pretty smoothly (especially on highways).
 
 To limit this issue, I added a filtering process that smoothed out the estimation.
+
+
+## Resubmission
+
+Thanks to the comments and proposal from the reviewer, I was able to improve the pipeline in order to be able to have correctly estimated lane marking and position of the car in lane for all frames of the project video. Changes after resubmit:
+- in the function colorSpaceProcessing: tuned threshold and added use of l channel and b channel (from the LAB colorspace)
+- in the function fitPolynom: tuning of the filtering parameter
+- in the function computeCurveAndCarPos: use bottom of the image for computing the car position
+- in pipeline and pipeline_vid: added projection of a green surface representing the lane
